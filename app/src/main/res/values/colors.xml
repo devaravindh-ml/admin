@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="purple_gradient_start">#5F4B8B</color> <color name="green_button">#4CAF50</color>    <color name="blue_button">#00BCD4</color>      <color name="orange_button">#FF9800</color>
+
+    <color name="solid_red_button">#FF4081</color>
+
+    <color name="red_logout">#DC3545</color>        <color name="alert_bg_light_red">#F8D7DA</color>   <color name="alert_text_red">#721C24</color>       <color name="alert_border_red">#F5C6CB</color>     <color name="dark_blue_text">#000080</color>    <color name="dark_blue_button">#0047AB</color>
+    <color name="purple_background">#6A5ACD</color>      <color name="dark_blue_text">#1976D2</color>          <color name="gray_border">#D3D3D3</color>            <color name="status_green">#008000</color>           <color name="star_green">#4CAF50</color>             <color name="purple_text">#673AB7</color>            <color name="purple_button">#9C27B0</color>          ```
+
+    ### 2. Drawables (`res/drawable/`)
+
+    | File Name | Purpose |
+    | :--- | :--- |
+    | `ic_homework_icon_colored` | Icon for the main title. |
+    | `ic_filter_subject` | Icon for the "Filter by Subject" text. |
+    | `ic_description` | Icon for the "Description" label (e.g., a small clipboard or paper icon). |
+    | `ic_progress` | Icon for the "Your Progress" label (e.g., a small chart or checklist icon). |
+    | `ic_question_doubt` | Icon for the "Your Questions &amp; Doubts" label (e.g., a small question mark icon). |
+    | `ic_submit_question` | Icon for the "Submit Question" button (e.g., a small arrow or send icon). |
+    | `ic_star_white` | Small white star icon for the rating badge. |
+    | `ic_back_arrow_black` | Back icon for the "Back to Home" button. |
+    | `rounded_dropdown_bg.xml` | Border and background for the spinner (reused from Attendance screen). |
+    | `rounded_input_border.xml` | Border for the question `EditText`. |
+    | `rounded_green_star_bg.xml` | Background for the green star badge. |
+
+    **Example Drawable:** `res/drawable/rounded_green_star_bg.xml`
+    ```xml
+    <?xml version="1.0" encoding="utf-8"?>
+    <shape xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="rectangle">
+        <solid android:color="@color/star_green"/>
+        <corners android:radius="4dp"/>
+    </shape>
+
+
+
+    <color name="purple_background">#6A5ACD</color>  <color name="dark_blue_text">#1976D2</color>      <color name="summary_blue">#00BCD4</color>        <color name="summary_green">#4CAF50</color>       <color name="summary_red_orange">#FF9800</color>  <color name="summary_purple">#9C27B0</color>      <color name="filter_blue">#2196F3</color>         <color name="table_header_purple">#E1BEE7</color> <color name="status_red">#FF0000</color>          <color name="status_green">#008000</color>        <color name="gray_border">#D3D3D3</color>
+</resources>
+
+
