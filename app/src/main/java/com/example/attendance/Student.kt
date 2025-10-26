@@ -1,5 +1,3 @@
-
-
 package com.example.attendance
 
 import android.content.Intent
@@ -8,26 +6,22 @@ import android.os.Bundle
 import android.widget.Button
 
 
-
-class MainActivity : AppCompatActivity() {
+class Student : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.student)
 
+        val logoutbutton = findViewById<Button>(R.id.btn_logout)
 
-        val studentLoginButton = findViewById<Button>(R.id.btn_student_login)
-
-
-        studentLoginButton.setOnClickListener {
-
+        logoutbutton.setOnClickListener {
             val intent = Intent(this, StudentLogin::class.java)
 
-
             startActivity(intent)
-
         }
 
 
     }
+
+
 }

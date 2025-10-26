@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple_gradient_start"
-    tools:context=".StudentLoginActivity"> <TextView
+    tools:context=".StudentLogin"> <TextView
     android:id="@+id/tv_title"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
