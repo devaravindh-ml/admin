@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"  android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7F73E5"
+    android:padding="16dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Attendance for Aravind"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"
+                android:textColor="@android:color/black"
+                app:drawableStartCompat="@drawable/ic_calendar"
+                android:drawablePadding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter Attendance"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:textColor="@android:color/black"
+                app:drawableStartCompat="@drawable/ic_search"
+                android:drawablePadding="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="16dp">
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:entries="@array/subjects_array"/>
+
+                <Spinner
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minHeight="48dp"
+                    android:entries="@array/date_range_array"/>
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="27-10-2025"
+                    android:minHeight="48dp"
+                    android:focusable="false"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_calendar_icon"
+                    android:background="@drawable/edittext_border"
+                    android:padding="8dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/apply_filter_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply Filter"
+                android:backgroundTint="#6200EE"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="24dp" />
+
+            <GridLayout
+                android:id="@+id/stat_grid_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:rowCount="1"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_marginBottom="24dp">
+
+                <include layout="@layout/stat_box" android:id="@+id/stat_total_days"
+                    grid:layout_columnWeight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:stat_color="#42A5F5" tools:stat_label="Total Days" tools:stat_value="10"/>
+
+                <include layout="@layout/stat_box" android:id="@+id/stat_present"
+                    grid:layout_columnWeight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:stat_color="#4CAF50" tools:stat_label="Present" tools:stat_value="4"/>
+
+                <include layout="@layout/stat_box" android:id="@+id/stat_absent"
+                    grid:layout_columnWeight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:stat_color="#F44336" tools:stat_label="Absent" tools:stat_value="6"/>
+
+                <include layout="@layout/stat_box" android:id="@+id/stat_percentage"
+                    grid:layout_columnWeight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:stat_color="#9C27B0" tools:stat_label="Percentage" tools:stat_value="40.0%" tools:stat_value_size="20sp"/>
+
+            </GridLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attendance Records"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:textColor="@android:color/black"
+                app:drawableStartCompat="@drawable/ic_list"
+                android:drawablePadding="8dp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+                <TableRow
+                    android:background="#E0E0E0"
+                    android:padding="8dp">
+                    <TextView style="@style/TableHeaderText" android:text="Date" />
+                    <TextView style="@style/TableHeaderText" android:text="Subject" />
+                    <TextView style="@style/TableHeaderText" android:text="Status" />
+                </TableRow>
+            </TableLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/attendance_records_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/attendance_row"/>
+
+            <Button
+                android:id="@+id/back_to_home_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back to Home"
+                android:backgroundTint="#F5F5F5"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="24dp"
+                android:drawableStart="@drawable/ic_home_black"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_gravity="start"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>

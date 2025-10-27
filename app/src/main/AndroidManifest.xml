@@ -13,9 +13,13 @@
         android:theme="@style/Theme.Attendance">
         <activity android:name=".Student"/>
         <activity android:name=".StudentLogin"/>
+        <activity android:name=".AttendanceActivity"/>
+        
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

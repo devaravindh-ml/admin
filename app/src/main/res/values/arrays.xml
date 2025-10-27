@@ -1,20 +1,15 @@
 <resources>
-    <string name="select_subject_prompt">Select Subject</string>
-
-    <string-array name="subjects_array">
-        <item>All Subjects</item>
-        <item>Software Engineering</item>
-        <item>Data Structure</item>
-        <item>Hindhi</item>
-    </string-array>
-
-    <string name="select_date_range_prompt">Date Range</string>
-
-    <string-array name="date_ranges_array">
+    <string-array name="date_range_array">
         <item>All Time</item>
         <item>Last 7 Days</item>
         <item>Last 30 Days</item>
-        <item>This Month</item>
+        <item>Custom Range</item>
     </string-array>
 
+    <string-array name="subjects_array">
+        <item>All Subjects</item>
+        <item>Maths</item>
+        <item>Frontend Programming</item>
+        <item>Data Structure</item>
+    </string-array>
 </resources>
