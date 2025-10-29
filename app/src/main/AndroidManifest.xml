@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Attendance">
         <activity android:name=".Student"/>
         <activity android:name=".StudentLogin"/>
-        <activity android:name=".AttendanceActivity"/>
+        <activity android:name=".Attendance"/>
         
         <activity
             android:name=".MainActivity"

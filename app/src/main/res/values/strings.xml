@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">attendance</string>
+    <!-- Standard application name string resource -->
+    <string name="app_name">Attendance Tracker</string>
+
+    <!-- Options for the Subject filter spinner -->
+    <string-array name="subject_options">
+        <item>All Subjects</item>
+        <item>Frontend Programming</item>
+        <item>Data Structure</item>
+        <item>Maths</item>
+        <item>Hindi</item>
+        <item>Software Engineering</item>
+    </string-array>
+
+    <!-- Options for the Date Range filter spinner -->
+    <string-array name="date_range_options">
+        <item>All Time</item>
+        <item>Last 7 Days</item>
+        <item>Last 30 Days</item>
+        <item>This Month</item>
+        <item>Last Month</item>
+        <item>Custom Range</item>
+    </string-array>
 </resources>
