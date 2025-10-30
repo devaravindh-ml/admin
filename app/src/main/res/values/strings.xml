@@ -1,6 +1,7 @@
 <resources>
     <!-- Standard application name string resource -->
-    <string name="app_name">Attendance Tracker</string>
+    <string name="app_name">Attendance</string>
+    <string name="institute_name">Auroville Institute of Applied Technology</string>
 
     <!-- Options for the Subject filter spinner -->
     <string-array name="subject_options">

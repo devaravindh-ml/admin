@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- REQUIRED: Permissions must be direct children of the <manifest> tag -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,25 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Attendance">
+
+        <!-- Standard Activity Declarations -->
         <activity android:name=".Student"/>
         <activity android:name=".StudentLogin"/>
         <activity android:name=".Attendance"/>
         <activity android:name=".ui.AttendanceActivity"/>
-        <category android:name="android.intent.category.LAUNCHER" />
-        <action android:name="android.intent.action.MAIN" />
-        
+
+        <!-- MAIN LAUNCHER ACTIVITY -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
 
-
-
+            <!-- CORRECT: Intent-filter properly contains action and category -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- NOTE: The incorrect <category> and <action> tags near the top have been removed. -->
+
+    </application>
 </manifest>

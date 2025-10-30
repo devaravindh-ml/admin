@@ -9,8 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
  */
 object RetrofitClient {
     // IMPORTANT: Replace this with your actual server URL!
-    // For local testing, use the IP address of your host machine (e.g., "http://10.0.2.2:8080/")
-    private const val BASE_URL = "https://your-api-domain.com/"
+    // For local testing, use the IP address of your host machine (e.g., "http://10.0.2.2:5000/")
+    private const val BASE_URL = "http://10.0.2.2:5000/"
 
     // 1. Lazy initialization of the Retrofit instance
     private val retrofit: Retrofit by lazy {

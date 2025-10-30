@@ -1,26 +1,27 @@
 package com.example.attendance.network
 
-import com.google.gson.annotations.SerializedName
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 /**
- * Data class representing a single attendance record, typically used in the table.
+ * Retrofit interface defining the API endpoints for fetching attendance data.
+ * The 'suspend' keyword indicates this is a coroutine function, allowing safe
+ * execution off the main thread.
+ *
+ * NOTE: This relies on the 'SummaryResponse' data class defined in 'dataclass.kt'.
  */
-data class AttendanceRecord(
-    val date: String,
-    val subject: String,
-    val status: String // "Present" or "Absent"
-)
+interface AttendanceService {
 
-/**
- * Data class representing the main summary response, used to populate the cards.
- */
-data class SummaryResponse(
-    val totalDays: Int,
-    val presentCount: Int,
-    val absentCount: Int,
-    val percentage: Float, // e.g., 40.0
-
-    // The list of detailed records for the table
-    @SerializedName("records")
-    val attendanceRecords: List<AttendanceRecord>
-)
+    /**
+     * Fetches the attendance summary and detailed records based on filter criteria.
+     *
+     * @param subject The subject selected by the user (e.g., "Frontend Programming").
+     * @param dateRange The date range selected (e.g., "Last 7 Days").
+     * @return A SummaryResponse object containing statistics and the list of records.
+     */
+    @GET("/api/attendance/summary")
+    suspend fun getAttendanceSummary(
+        @Query("subject") subject: String,
+        @Query("dateRange") dateRange: String
+    ): SummaryResponse
+}

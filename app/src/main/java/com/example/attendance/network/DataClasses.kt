@@ -1,28 +1,28 @@
 package com.example.attendance.network
 
-import retrofit2.http.GET
-import retrofit2.http.Query
+/**
+ * Data class representing a single student's attendance entry.
+ * This should match the structure of an item in the 'records' list from the server.
+ */
+data class AttendanceRecord(
+    val studentId: String,
+    val studentName: String,
+    val date: String, // e.g., "2025-10-29"
+    val status: String, // e.g., "Present", "Absent", "Late"
+    val checkInTime: String? // Optional time of check-in, e.g., "09:05 AM"
+)
 
 /**
- * Retrofit interface defining the API endpoints for fetching attendance data.
- * The 'suspend' keyword indicates this is a coroutine function, allowing safe
- * execution off the main thread (since you added coroutine dependencies).
+ * The main data class representing the complete response from the API endpoint.
+ * Corresponds to the JSON structure returned by the /api/attendance/summary endpoint.
  */
-interface AttendanceService {
+data class SummaryResponse(
+    // Summary statistics for the selected criteria
+    val totalRecords: Int,
+    val totalPresent: Int,
+    val totalAbsent: Int,
+    val attendancePercentage: Double,
 
-    /**
-     * Fetches the attendance summary and detailed records based on filter criteria.
-     * * @param subject The subject selected by the user (e.g., "Frontend Programming").
-     * @param dateRange The date range selected (e.g., "Last 7 Days").
-     * @return A SummaryResponse object containing statistics and the list of records.
-     */
-    @GET("/api/attendance/summary")
-    suspend fun getAttendanceSummary(
-        @Query("subject") subject: String,
-        @Query("dateRange") dateRange: String
-    ): SummaryResponse
-
-    // You could add other API endpoints here if needed, like:
-    // @GET("/api/subjects")
-    // suspend fun getAvailableSubjects(): List<String>
-}
+    // The detailed list of attendance records
+    val records: List<AttendanceRecord>
+)
